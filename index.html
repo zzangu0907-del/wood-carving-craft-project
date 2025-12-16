@@ -3,23 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인 페이지입니다</title>
-    <link rel="stylesheet" href="style.css">
-    </head>
+    <title>나무가 꾸는 꿈 - 메인</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* [드림코어 무드 설정] */
+        :root {
+            --bg-color-1: #e0c3fc; /* 연한 라벤더 */
+            --bg-color-2: #8ec5fc; /* 연한 하늘색 */
+            --bg-color-3: #fcf6bd; /* 연한 크림색 */
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --text-color: #4a4a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Gowun Batang', serif;
+            color: var(--text-color);
+            background: linear-gradient(-45deg, var(--bg-color-1), var(--bg-color-2), var(--bg-color-3), var(--bg-color-1));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* 화면 정중앙 정렬 */
+            overflow: hidden; /* 메인 페이지는 스크롤 없이 한 화면에 담기 */
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* 네비게이션 바 */
+        nav {
+            position: absolute; /* 메인에서는 상단에 고정 */
+            top: 30px;
+            background: var(--glass-bg);
+            padding: 15px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            animation: float 6s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* 메인 컨테이너 */
+        .container {
+            text-align: center;
+            animation: float 8s ease-in-out infinite reverse;
+            z-index: 1;
+        }
+
+        /* 타이틀 스타일 */
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #5e548e;
+            font-weight: normal;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        /* 시작하기 버튼 스타일 */
+        .btn-start {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 30px;
+            color: #5e548e;
+            font-size: 1.1rem;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .btn-start:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px; /* 글자가 살짝 퍼지는 효과 */
+        }
+
+        /* 배경 장식 (빛망울) */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: 0;
+            opacity: 0.5;
+            animation: float 15s infinite;
+        }
+        .orb-main-1 { width: 400px; height: 400px; top: 20%; left: 15%; background: #ffc8dd; animation-delay: 0s; }
+        .orb-main-2 { width: 300px; height: 300px; bottom: 15%; right: 20%; background: #bde0fe; animation-delay: -5s; }
+        .orb-main-3 { width: 150px; height: 150px; top: 15%; right: 30%; background: #fcf6bd; animation-delay: -2s; }
+
+    </style>
+</head>
 <body>
+
+    <div class="orb orb-main-1"></div>
+    <div class="orb orb-main-2"></div>
+    <div class="orb orb-main-3"></div>
+
     <nav>
-        <a href="index.html">🏠 메인</a>
-        <a href="about.html">🙋‍♂️ 자기소개</a>
-        <a href="project.html">💻 프로젝트</a>
-        <a href="gallery.html">📸 갤러리</a>
-        <a href="resources.html">💾 자료실</a>
-        <a href="guestbook.html">💬 방명록</a>
+        <a href="index.html">메인</a>
+        <a href="about.html">자기소개</a>
+        <a href="project.html">프로젝트</a>
+        <a href="gallery.html">갤러리</a>
+        <a href="resources.html">자료실</a>
+        <a href="guestbook.html">방명록</a>
     </nav>
 
     <div class="container">
-        <h1>🙋‍♂️ 자기소개</h1>
-        <p>여기에 본인의 멋진 자기소개 내용을 채워주세요!</p>
-        <p>사진도 넣고, 경력도 쓰고... 프로다운 모습을 보여주세요.</p>
+        <h1>나무가 꾸는 꿈</h1>
+        <p>
+            12학년 짱구의 우드카빙 프로젝트<br>
+            학교와 마을, 그리고 사람을 잇는 따뜻한 기록
+        </p>
+        
+        <a href="about.html" class="btn-start">이야기 시작하기</a>
     </div>
+
 </body>
 </html>
