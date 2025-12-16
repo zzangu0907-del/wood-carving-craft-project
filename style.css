@@ -1,22 +1,18 @@
-/* =========================================
-   ✨ Dreamcore Universal Style (Font Fix)
-   ========================================= */
+/* ==================================================
+   ✨ FINAL DREAMCORE STYLE (ALL PAGES UNIFIED)
+   ================================================== */
 
-/* 1. 폰트 불러오기 (타자기체 + 고딕체) */
+/* 1. 폰트 세팅 (타자기 + 돋움) */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Gowun+Dodum&display=swap');
 
-/* 2. [핵심 수정] 모든 태그에 폰트 강제 적용 */
-/* 제목이나 메뉴가 아니면 무조건 '고운 돋움'을 쓰도록 설정 */
-body, p, span, a, li, table, th, td, div, button {
-    font-family: 'Gowun Dodum', sans-serif;
-}
-
-/* 3. 전체 초기화 */
+/* 2. 전체 초기화 */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* 4. 배경 및 기본 설정 */
+/* 3. 배경 (메인과 100% 동일한 움직이는 그라데이션) */
 body {
-    color: #5a4a75; /* 짙은 보라색 텍스트 */
+    /* 모든 텍스트 기본 폰트 강제 설정 */
+    font-family: 'Gowun Dodum', sans-serif;
+    color: #5a4a75;
     line-height: 1.8;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
     background-size: 400% 400%;
@@ -30,12 +26,12 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* 5. 제목 & 메뉴 전용 폰트 (타자기체) - 포인트 주기 */
+/* 제목과 메뉴는 타자기체로 포인트 */
 h1, h2, h3, nav a, .logo {
-    font-family: 'Courier Prime', monospace !important; /* 무조건 타자기체 */
+    font-family: 'Courier Prime', monospace !important;
 }
 
-/* 6. 네비게이션 바 */
+/* 4. 네비게이션 (유리바) */
 nav {
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
@@ -48,7 +44,7 @@ nav {
     border: 1px solid rgba(255,255,255,0.8);
     position: sticky;
     top: 20px;
-    z-index: 100;
+    z-index: 999;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
@@ -63,17 +59,17 @@ nav a {
 }
 nav a:hover { color: #ffeaa7; }
 
-/* 7. 메인 컨테이너 */
+/* 5. 메인 컨테이너 (둥둥 떠다니는 박스) */
 .container {
     width: 90%;
     max-width: 900px;
     margin: 40px auto;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(5px);
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.65); /* 반투명 */
+    backdrop-filter: blur(8px);
+    padding: 50px;
     border-radius: 30px;
     box-shadow: 0 10px 30px rgba(162, 155, 254, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.9);
     animation: float 6s ease-in-out infinite;
 }
 
@@ -83,104 +79,105 @@ nav a:hover { color: #ffeaa7; }
     100% { transform: translateY(0px); }
 }
 
-/* 8. 텍스트 스타일 */
+/* 6. 공통 텍스트 스타일 */
 h1 {
     font-size: 2.5rem;
     color: #6c5ce7;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-shadow: 2px 2px 0px #fab1a0;
 }
 
 h2 {
+    font-size: 1.5rem;
     color: #5a4a75;
     border-bottom: 2px dashed #a29bfe;
     padding-bottom: 10px;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
-/* 9. [프로젝트 페이지] 표(Table) 폰트 강제 교정 */
-.spec-table {
+/* 7. [통일] 카드/리스트/테이블 디자인 */
+/* 프로젝트의 표와 자료실의 리스트를 갤러리 카드처럼 만듦 */
+
+/* (1) 프로젝트 스펙 테이블 */
+.dream-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 10px;
-    margin-top: 10px;
 }
-
-.spec-table th {
-    font-family: 'Gowun Dodum', sans-serif; /* 폰트 강제 */
+.dream-table th {
     background: #a29bfe;
     color: white;
     padding: 15px;
-    border-radius: 10px 0 0 10px;
-    width: 30%;
-    font-weight: bold;
-}
-
-.spec-table td {
+    border-radius: 15px 0 0 15px;
     font-family: 'Gowun Dodum', sans-serif; /* 폰트 강제 */
-    background: rgba(255,255,255,0.8);
+}
+.dream-table td {
+    background: rgba(255,255,255,0.7);
     padding: 15px;
-    border-radius: 0 10px 10px 0;
-    border: 1px solid #eee;
-    color: #444;
+    border-radius: 0 15px 15px 0;
+    border: 1px solid #fff;
+    font-family: 'Gowun Dodum', sans-serif; /* 폰트 강제 */
 }
 
-/* 10. [자료실 페이지] 리스트 폰트 강제 교정 */
-.resource-list {
-    list-style: none;
+/* (2) 자료실 그리드 (갤러리와 똑같은 격자무늬) */
+.dream-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 반응형 격자 */
     gap: 20px;
+    list-style: none; /* 점 없애기 */
 }
 
-.resource-list li {
-    background: rgba(255, 255, 255, 0.5);
+.dream-card {
+    background: rgba(255, 255, 255, 0.6);
     padding: 20px;
     border-radius: 20px;
-    border: 2px solid rgba(255,255,255,0.9);
+    border: 2px solid rgba(255,255,255,0.8);
     transition: all 0.3s;
-    display: flex;
-    align-items: center;
+    text-align: center; /* 가운데 정렬 */
 }
 
-.resource-list li:hover {
+.dream-card:hover {
     background: white;
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(162, 155, 254, 0.3);
     border-color: #a29bfe;
+    box-shadow: 0 10px 20px rgba(162, 155, 254, 0.3);
 }
 
-.resource-link {
-    font-family: 'Gowun Dodum', sans-serif !important; /* 폰트 강제 */
+.dream-link {
     text-decoration: none;
     color: #5a4a75;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    font-size: 1.05rem;
+    font-family: 'Gowun Dodum', sans-serif;
+    display: block;
 }
 
-.resource-link .icon {
-    font-size: 1.5rem;
-    margin-right: 15px;
+.icon-large {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
 }
 
-/* 11. 버튼 및 이미지 */
+/* 8. 이미지 및 버튼 */
+img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+
 .btn {
-    font-family: 'Gowun Dodum', sans-serif !important; /* 폰트 강제 */
+    font-family: 'Gowun Dodum', sans-serif;
     display: inline-block;
     background: linear-gradient(45deg, #a29bfe, #6c5ce7);
     color: white;
-    padding: 12px 30px;
+    padding: 12px 35px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-    transition: transform 0.2s;
     border: none;
+    margin-top: 30px;
+    transition: transform 0.2s;
 }
 .btn:hover { transform: scale(1.05); }
-
-img { max-width: 100%; border-radius: 15px; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); }
