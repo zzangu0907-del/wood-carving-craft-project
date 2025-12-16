@@ -1,25 +1,19 @@
 /* =========================================
-   ✨ Dreamcore Master Style (Final Ver.)
+   ✨ 통합 드림코어 스타일 (Final Master)
    ========================================= */
 
 /* 1. 폰트 불러오기 (타자기체 + 고딕체) */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Gowun+Dodum&display=swap');
 
-/* 2. 전체 초기화 (깨짐 방지) */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* 2. 전체 초기화 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* 3. 배경 및 기본 설정 */
+/* 3. 배경 및 기본 설정 (움직이는 그라데이션) */
 body {
-    font-family: 'Gowun Dodum', sans-serif; /* 본문은 읽기 편한 폰트 */
-    color: #4a4a4a;
+    font-family: 'Gowun Dodum', sans-serif;
+    color: #5a4a75; /* 짙은 보라색 텍스트 */
     line-height: 1.8;
-    
-    /* 몽환적인 그라데이션 배경 (움직임) */
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     min-height: 100vh;
@@ -31,56 +25,63 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* 4. 네비게이션 바 (상단 메뉴) */
+/* 4. 네비게이션 바 (공통) */
 nav {
-    background: rgba(255, 255, 255, 0.6); /* 반투명 흰색 */
-    backdrop-filter: blur(10px); /* 유리 효과 */
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
     border-radius: 50px;
     padding: 15px;
     width: 90%;
     max-width: 800px;
-    margin: 20px auto; /* 중앙 정렬 */
+    margin: 20px auto;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.8);
     position: sticky;
     top: 20px;
     z-index: 100;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 nav a {
     text-decoration: none;
-    color: #5a4a75;
-    font-family: 'Courier Prime', monospace; /* 메뉴는 타자기체 */
+    color: #fff;
+    font-family: 'Courier Prime', monospace;
     font-weight: bold;
     margin: 0 10px;
     font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #ff6b6b;
-    text-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
-}
+nav a:hover { color: #ffeaa7; }
 
-/* 5. 메인 컨테이너 (흰색 박스) */
+/* 5. 메인 컨테이너 (흰색 반투명 박스) */
 .container {
     width: 90%;
     max-width: 900px;
     margin: 40px auto;
-    background: rgba(255, 255, 255, 0.85); /* 내용이 잘 보이게 불투명도 조절 */
+    background: rgba(255, 255, 255, 0.7); /* 반투명 */
+    backdrop-filter: blur(5px);
     padding: 40px;
     border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 2px solid rgba(255, 255, 255, 1);
+    box-shadow: 0 10px 30px rgba(162, 155, 254, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    animation: float 6s ease-in-out infinite;
 }
 
-/* 6. 텍스트 스타일 */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 6. 텍스트 및 제목 스타일 */
 h1 {
     font-family: 'Courier Prime', monospace;
     font-size: 2.5rem;
     color: #6c5ce7;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     text-shadow: 2px 2px 0px #fab1a0;
 }
 
@@ -93,5 +94,80 @@ h2 {
     font-family: 'Courier Prime', monospace;
 }
 
-p {
-    margin-bottom:
+/* 7. [프로젝트 페이지 전용] 테이블 디자인 */
+.spec-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* 행 간격 */
+    margin-top: 10px;
+}
+
+.spec-table th {
+    background: #a29bfe; /* 헤더 연보라색 */
+    color: white;
+    padding: 15px;
+    border-radius: 10px 0 0 10px;
+    width: 30%;
+}
+
+.spec-table td {
+    background: rgba(255,255,255,0.8);
+    padding: 15px;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #eee;
+}
+
+/* 8. [자료실 페이지 전용] 리스트 디자인 */
+.resource-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.resource-list li {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.9);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.resource-list li:hover {
+    background: white;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(162, 155, 254, 0.3);
+    border-color: #a29bfe;
+}
+
+.resource-link {
+    text-decoration: none;
+    color: #5a4a75;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.resource-link .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+/* 9. 버튼 및 이미지 공통 */
+.btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #a29bfe, #6c5ce7);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+    border: none;
+}
+.btn:hover { transform: scale(1.05); }
+
+img { max-width: 100%; border-radius: 15px; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); }
