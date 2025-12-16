@@ -1,91 +1,74 @@
-/* --- 프로젝트 페이지 전용 스타일 --- */
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 : 기억의 조각</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">🏠 메인</a>
+        <a href="about.html">🙋‍♂️ 소개</a>
+        <a href="project.html">💻 프로젝트</a>
+        <a href="gallery.html">📸 갤러리</a>
+        <a href="resources.html">💾 자료실</a>
+        <a href="guestbook.html">💬 방명록</a>
+    </nav>
 
-/* 헤더 스타일 */
-.project-header {
-    text-align: center;
-    margin-bottom: 40px;
-    border-bottom: 2px solid #8B4513; /* 나무색 밑줄 */
-    padding-bottom: 20px;
-}
+    <div class="container">
+        <h1>🛠️ 기억의 조각: [월넛 체어]</h1>
+        
+        <div class="project-section">
+            <h2>1. 형상화 (Visualization)</h2>
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="https://via.placeholder.com/800x500/a29bfe/ffffff?text=Dreamy+Chair" alt="작품 대표 사진" style="max-width: 100%; border-radius: 15px;">
+            </div>
+            <p class="project-desc">
+                이 사물은 꿈속에서 보았던 편안함을 현실로 가져오기 위해 제작되었습니다. 
+                나무의 결은 시간의 흐름을 의미하며, 앉았을 때 현실과 꿈의 경계가 흐려지는 듯한 안락함을 목표로 했습니다.
+            </p>
+        </div>
 
-.subtitle {
-    color: #666;
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
+        <div class="project-section">
+            <h2>2. 물질 구성 (Specifications)</h2>
+            <table class="spec-table">
+                <tbody>
+                    <tr>
+                        <th>주 재료</th>
+                        <td>월넛 (호두나무), 메이플 (단풍나무)</td>
+                    </tr>
+                    <tr>
+                        <th>가공 도구</th>
+                        <td>끌, 대패, 그리고 인내심</td>
+                    </tr>
+                    <tr>
+                        <th>제작 시간</th>
+                        <td>2024.03 ~ 2024.10 (약 6개월의 시간)</td>
+                    </tr>
+                    <tr>
+                        <th>마감 처러</th>
+                        <td>천연 오일 스테인 (자연의 향)</td>
+                    </tr>
+                    <tr>
+                        <th>크기</th>
+                        <td>W 550 x D 600 x H 850 (mm)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-/* 섹션 공통 */
-.project-section {
-    margin-bottom: 50px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 살짝 그림자 */
-}
-
-.project-section h2 {
-    color: #8B4513; /* 제목 나무색 */
-    border-left: 5px solid #8B4513;
-    padding-left: 15px;
-    margin-bottom: 20px;
-}
-
-/* 이미지 박스 */
-.project-image-box {
-    width: 100%;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.project-image-box img {
-    max-width: 100%; /* 화면 너비에 맞춰 줄어듦 */
-    height: auto;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-.project-desc {
-    line-height: 1.8;
-    color: #444;
-}
-
-/* 스펙 테이블 스타일 */
-.spec-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 0.95rem;
-}
-
-.spec-table th, .spec-table td {
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    text-align: left;
-}
-
-.spec-table th {
-    background: #f9f5f0; /* 아주 연한 베이지색 */
-    width: 25%;
-    color: #5d4037;
-    font-weight: bold;
-}
-
-/* 버튼 스타일 (갤러리 이동 등) */
-.project-actions {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 60px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #8B4513;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #5e2c0b;
+        <div class="project-section">
+            <h2>3. 의도된 오류 (Review)</h2>
+            <p>
+                제작 과정에서 다리가 부러지는 '글리치(Glitch)'가 발생했으나, 이를 보강하며 더 튼튼한 구조를 얻게 되었습니다. 
+                완벽하지 않기에 더 현실적이고, 그렇기에 더 꿈같은 의자입니다.
+            </p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="gallery.html" class="btn">📸 잔상(갤러리) 보러가기</a>
+        </div>
+    </div>
+</body>
+</html>
