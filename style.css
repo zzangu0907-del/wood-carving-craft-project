@@ -1,1 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;500&display=swap');
 
+:root {
+    --bg-navy: #1B2631;       /* 깊은 밤색 (네이비) */
+    --accent-green: #145A32;  /* 짙은 숲색 (다크 그린) */
+    --wood-brown: #8D6E63;    /* 나무색 (포인트) */
+    --text-main: #ECF0F1;     /* 밝은 회색 (본문) */
+    --card-bg: #212F3C;       /* 카드 배경 (네이비보다 조금 밝음) */
+}
+
+body {
+    background-color: var(--bg-navy);
+    color: var(--text-main);
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+/* 네비게이션 (메뉴) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(27, 38, 49, 0.95);
+    border-bottom: 3px solid var(--accent-green);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--wood-brown);
+    text-decoration: none;
+}
+
+.menu a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--wood-brown);
+}
+
+/* 공통 레이아웃 */
+.container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Noto Serif KR', serif;
+    color: var(--wood-brown);
+}
+
+/* 메인 페이지 스타일 */
+.hero {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #BDC3C7;
+    margin-top: 10px;
+}
+
+/* 프로젝트 페이지 (갤러리 + 설명) */
+.project-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-green);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 30px;
+    align-items: start;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.project-img {
+    flex: 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.9); /* 분위기를 위해 살짝 톤 다운 */
+}
+
+.project-info {
+    flex: 1.2;
+}
+
+.tool-tag {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+/* 방명록 페이지 */
+.guestbook-box {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    border-top: 5px solid var(--wood-brown);
+}
+
+/* 모바일 화면 대응 */
+@media (max-width: 768px) {
+    .project-item {
+        flex-direction: column;
+    }
+}
